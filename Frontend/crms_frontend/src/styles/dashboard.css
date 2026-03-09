@@ -4,20 +4,23 @@
   background: #f3f6fb;
 }
 
+/* SIDEBAR */
 .sidebar {
   width: 240px;
   background: #1f3566;
-  color: #fff;
-  padding: 18px 12px;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  padding: 16px 12px;
+}
+
+.sidebar-top {
+  padding: 6px 8px 16px;
 }
 
 .sidebar-logo {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
-  padding: 8px 12px 16px;
 }
 
 .sidebar-menu,
@@ -35,7 +38,7 @@
   padding: 11px 12px;
   border-radius: 10px;
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: background 0.2s ease;
 }
 
 .sidebar-item:hover,
@@ -48,34 +51,37 @@
   font-weight: 600;
 }
 
-.sidebar-section {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  padding-top: 16px;
+.sidebar-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 16px 0;
 }
 
 .sidebar-section-title {
   font-size: 15px;
   font-weight: 600;
-  padding: 0 12px 10px;
+  padding: 0 10px 12px;
 }
 
 .sidebar-search-box {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin: 0 4px 12px;
   padding: 10px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 10px;
-  margin: 0 6px 12px;
-  color: #d1d9ef;
+  color: #d8e2ff;
 }
 
+/* MAIN */
 .dashboard-main {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
+/* TOPBAR */
 .topbar {
   height: 72px;
   background: #ffffff;
@@ -87,15 +93,33 @@
   gap: 16px;
 }
 
+.topbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.topbar-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .topbar-search {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #f4f7fb;
-  border: 1px solid #e2e8f0;
-  padding: 10px 14px;
+  width: 240px;
+  background: #f5f7fb;
+  border: 1px solid #dde5f0;
   border-radius: 10px;
-  min-width: 280px;
+  padding: 10px 12px;
 }
 
 .topbar-search input {
@@ -105,226 +129,56 @@
   width: 100%;
 }
 
-.topbar-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.icon-btn,
-.ghost-btn,
-.secondary-btn,
-.primary-btn {
-  border: none;
-  cursor: pointer;
-  border-radius: 10px;
-  transition: 0.2s ease;
-}
-
 .icon-btn {
   width: 40px;
   height: 40px;
-  background: #f4f7fb;
+  border: none;
+  background: #f5f7fb;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.ghost-btn {
-  height: 40px;
-  background: #f4f7fb;
-  padding: 0 14px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  cursor: pointer;
 }
 
 .secondary-btn {
   height: 40px;
   padding: 0 16px;
+  border-radius: 10px;
+  border: 1px solid #d7e0ec;
   background: #ffffff;
-  border: 1px solid #d8e1ee;
+  cursor: pointer;
 }
 
 .primary-btn {
   height: 40px;
   padding: 0 16px;
+  border-radius: 10px;
+  border: none;
   background: #3b6df6;
-  color: white;
+  color: #ffffff;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .dashboard-content {
   padding: 20px;
 }
 
-.page-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 22px;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.page-title {
-  font-size: 30px;
-  font-weight: 700;
-}
-
-.page-subtitle {
-  margin-top: 4px;
-  color: #6b7280;
-}
-
-.page-header-actions {
-  display: flex;
-  gap: 10px;
-}
-
-.select-box {
-  min-width: 130px;
-  height: 40px;
-  border: 1px solid #d9e1ec;
-  border-radius: 10px;
-  background: white;
-  padding: 0 10px;
-}
-
-.metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-bottom: 18px;
-}
-
-.charts-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 2fr;
-  gap: 16px;
-}
-
-.card-container {
-  background: #ffffff;
+.placeholder-content {
+  min-height: 300px;
+  border: 2px dashed #cfd8e6;
   border-radius: 16px;
-  border: 1px solid #e5eaf2;
-  padding: 20px;
-  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
-}
-
-.metric-card {
-  min-height: 170px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.metric-title {
-  font-size: 14px;
-  font-weight: 700;
-  color: #111827;
-}
-
-.metric-value-row {
+  background: #ffffff;
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 22px;
-  margin-bottom: 28px;
-  flex-wrap: wrap;
-}
-
-.metric-value {
-  font-size: 34px;
-  font-weight: 700;
-  color: #1f2937;
-}
-
-.metric-growth {
-  font-size: 18px;
-  font-weight: 600;
-  color: #16a34a;
-}
-
-.metric-footer {
-  color: #6b7280;
-  font-size: 14px;
-}
-
-.section-title {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.chart-card {
-  min-height: 360px;
-}
-
-.chart-area {
-  width: 100%;
-  height: 300px;
-}
-
-.gauge-wrapper {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  height: 260px;
-}
-
-.gauge-track {
-  width: 100%;
-  height: 18px;
-  background: #e8edf5;
-  border-radius: 999px;
-  overflow: hidden;
-  margin-bottom: 16px;
-}
-
-.gauge-fill {
-  height: 100%;
-  background: #f5b97d;
-  border-radius: 999px;
-}
-
-.gauge-values {
-  display: flex;
-  justify-content: space-between;
-  color: #6b7280;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-.gauge-center-text {
-  text-align: center;
-  margin-top: 24px;
-}
-
-.gauge-achieved {
-  font-size: 42px;
-  font-weight: 700;
-  color: #1f2937;
-}
-
-.gauge-remaining {
-  margin-top: 10px;
-  color: #4b5563;
+  color: #64748b;
   font-size: 18px;
 }
 
-@media (max-width: 1200px) {
-  .metrics-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .charts-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 900px) {
+/* RESPONSIVE */
+@media (max-width: 1000px) {
   .sidebar {
     display: none;
   }
@@ -336,26 +190,11 @@
     align-items: stretch;
   }
 
-  .topbar-search {
-    min-width: unset;
-    width: 100%;
-  }
-
-  .topbar-actions {
+  .topbar-right {
     justify-content: flex-start;
   }
-}
 
-@media (max-width: 640px) {
-  .metrics-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .page-title {
-    font-size: 24px;
-  }
-
-  .dashboard-content {
-    padding: 14px;
+  .topbar-search {
+    width: 100%;
   }
 }

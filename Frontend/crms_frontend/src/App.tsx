@@ -1,5 +1,5 @@
-import AppRoutes from "./routes/AppRoutes";
+import AnalyticsPage from "./pages/AnalyticsPage";
 
 export default function App() {
-  return <AppRoutes />;
+  return <AnalyticsPage />;
 }

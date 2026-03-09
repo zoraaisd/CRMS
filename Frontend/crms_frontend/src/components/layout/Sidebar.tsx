@@ -34,7 +34,9 @@ const workspaceItems = [
 export default function Sidebar() {
   return (
     <aside className="sidebar">
-      <div className="sidebar-logo">Zoho CRM</div>
+      <div className="sidebar-top">
+        <div className="sidebar-logo">Zoho CRM</div>
+      </div>
 
       <nav className="sidebar-menu">
         {primaryItems.map((item) => {
@@ -50,6 +52,8 @@ export default function Sidebar() {
           );
         })}
       </nav>
+
+      <div className="sidebar-divider" />
 
       <div className="sidebar-section">
         <div className="sidebar-section-title">CRM Teamspace</div>
