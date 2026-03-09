@@ -1,5 +1,5 @@
-import AppRoutes from "./routes/AppRoutes";
+import LoginPage from "./pages/LoginPage";
 
 export default function App() {
-  return <AppRoutes />;
+  return <LoginPage />;
 }
