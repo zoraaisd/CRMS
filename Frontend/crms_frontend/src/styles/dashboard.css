@@ -1,25 +1,30 @@
 .dashboard-shell {
   display: flex;
   min-height: 100vh;
-  background: #f3f6fb;
+  background: #eef2f7;
 }
 
-/* SIDEBAR */
 .sidebar {
   width: 240px;
-  background: #1f3566;
+  background: #213a73;
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  padding: 16px 12px;
+  padding: 12px 10px;
 }
 
 .sidebar-top {
-  padding: 6px 8px 16px;
+  padding: 6px 6px 12px;
+}
+
+.sidebar-brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .sidebar-logo {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 700;
 }
 
@@ -27,16 +32,17 @@
 .sidebar-submenu {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .sidebar-item,
 .sidebar-subitem {
+  min-height: 38px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 11px 12px;
-  border-radius: 10px;
+  justify-content: space-between;
+  padding: 0 12px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background 0.2s ease;
 }
@@ -47,50 +53,67 @@
 }
 
 .sidebar-item.active {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.14);
   font-weight: 600;
+}
+
+.sidebar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .sidebar-divider {
   height: 1px;
-  background: rgba(255, 255, 255, 0.15);
-  margin: 16px 0;
+  background: rgba(255, 255, 255, 0.14);
+  margin: 10px 0 12px;
 }
 
 .sidebar-section-title {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
-  padding: 0 10px 12px;
+  padding: 0 10px 10px;
 }
 
 .sidebar-search-box {
+  height: 40px;
   display: flex;
   align-items: center;
   gap: 8px;
-  margin: 0 4px 12px;
-  padding: 10px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 0 4px 10px;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 10px;
-  color: #d8e2ff;
+  color: #dce5ff;
 }
 
-/* MAIN */
+.sidebar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar-subitem:hover .sidebar-actions,
+.sidebar-subitem:focus-within .sidebar-actions {
+  opacity: 1;
+}
+
 .dashboard-main {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-/* TOPBAR */
 .topbar {
-  height: 72px;
+  height: 64px;
   background: #ffffff;
-  border-bottom: 1px solid #e5eaf2;
+  border-bottom: 1px solid #dde4ef;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
-  gap: 16px;
+  padding: 0 16px;
 }
 
 .topbar-left {
@@ -100,101 +123,48 @@
 
 .topbar-title {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   color: #1f2937;
 }
 
 .topbar-right {
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .topbar-search {
+  width: 235px;
+  height: 34px;
   display: flex;
   align-items: center;
   gap: 8px;
-  width: 240px;
-  background: #f5f7fb;
-  border: 1px solid #dde5f0;
-  border-radius: 10px;
-  padding: 10px 12px;
+  background: #f4f7fb;
+  border: 1px solid #d9e1ec;
+  border-radius: 8px;
+  padding: 0 12px;
 }
 
 .topbar-search input {
+  width: 100%;
   border: none;
   outline: none;
   background: transparent;
-  width: 100%;
+  font-size: 14px;
 }
 
 .icon-btn {
-  width: 40px;
-  height: 40px;
+  width: 34px;
+  height: 34px;
   border: none;
-  background: #f5f7fb;
-  border-radius: 10px;
+  border-radius: 8px;
+  background: #f4f7fb;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-}
-
-.secondary-btn {
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 10px;
-  border: 1px solid #d7e0ec;
-  background: #ffffff;
-  cursor: pointer;
-}
-
-.primary-btn {
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 10px;
-  border: none;
-  background: #3b6df6;
-  color: #ffffff;
-  font-weight: 600;
   cursor: pointer;
 }
 
 .dashboard-content {
   padding: 20px;
-}
-
-.placeholder-content {
-  min-height: 300px;
-  border: 2px dashed #cfd8e6;
-  border-radius: 16px;
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #64748b;
-  font-size: 18px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 1000px) {
-  .sidebar {
-    display: none;
-  }
-
-  .topbar {
-    height: auto;
-    padding: 16px;
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .topbar-right {
-    justify-content: flex-start;
-  }
-
-  .topbar-search {
-    width: 100%;
-  }
 }

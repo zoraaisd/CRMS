@@ -1,21 +1,29 @@
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
 
 type DashboardLayoutProps = {
-  children?: ReactNode;
+  children: ReactNode;
 };
 
 export default function DashboardLayout({
   children,
 }: DashboardLayoutProps) {
-  return (
-    <div className="dashboard-shell">
-      <Sidebar />
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
-      <div className="dashboard-main">
-        <Topbar />
-        <main className="dashboard-content">{children}</main>
+  return (
+    <div className="flex min-h-screen bg-slate-100">
+      <Sidebar
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+      />
+
+      <div className="flex min-w-0 flex-1 flex-col">
+        <Topbar
+          sidebarOpen={sidebarOpen}
+          setSidebarOpen={setSidebarOpen}
+        />
+        <main className="p-5">{children}</main>
       </div>
     </div>
   );

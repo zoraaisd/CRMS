@@ -1,5 +1,5 @@
-import AnalyticsPage from "./pages/AnalyticsPage";
+import HomePage from "./pages/HomePage";
 
 export default function App() {
-  return <AnalyticsPage />;
+  return <HomePage />;
 }
